@@ -384,16 +384,16 @@ nav ul li a i {
     position: relative;
     overflow: hidden;
     justify-content: center;
-    width: 300px;
-    height: 80px;
+    width: 270px;
+    height: 64px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
     padding: 8px;
     box-sizing: border-box;
   }
   .palbum-cover {
-    width: 64px;
-    height: 64px;
+    width: 54px;
+    height: 54px;
     border-radius: 8px;
     overflow: hidden;
     margin-right: 12px;
@@ -414,18 +414,18 @@ nav ul li a i {
     margin-bottom: 4px;
   }
   .psong-title {
-    font-size: 16px;
+    font-size: 10px;
     color: #fff;
     margin: 0;
   }
   .partist {
-    font-size: 12px;
+    font-size: 8px;
     color: #b3b3b3;
     margin: 0;
   }
   .pprogress-bar {
     width: 90%;
-    height: 7px;
+    height: 5px;
     background-color: #4f4f4f;
     border-radius: 2px;
     overflow: hidden;
@@ -471,14 +471,14 @@ nav ul li a i {
     flex-direction: column;
     align-items: center;
     position: fixed;
-    bottom: 20px;
-    left: 20px;
+    bottom: 15px;
+    left: 15px;
     z-index: 9999;
     gap: 10px;
   }
   .slider {
-    --slider-width: 55%;
-    --slider-height: 15px;
+    --slider-width: 44%;
+    --slider-height: 11px;
     --slider-bg: rgba(82, 82, 82, 0.322);
     --slider-border-radius: 5px;
     --level-color: #ff0000;
@@ -545,7 +545,7 @@ nav ul li a i {
       -100px 0px 20px 100px var(--level-color);
   }
   .avatar-wrapper {
-    position: relative; /* لازم برای اینکه Zها داخلش دقیق تنظیم بشن */
+    position: relative;
     display: inline-block;
   }
   
@@ -583,4 +583,5 @@ nav ul li a i {
       opacity: 0;
     }
   }
+
   
