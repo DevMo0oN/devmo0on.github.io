@@ -79,23 +79,32 @@ window.onload = function () {
           }
         }
         if (otherActivity) {
-          if (lastActivityId !== otherActivity.id || lastActivityType !== "other") {
-            lastActivityId = otherActivity.id; 
-            lastActivityType = "other"; 
-            lastSpotifyStart = null; 
-            clearInterval(spotifyTimer); 
-            activityContainer.classList.remove('hidden');
-            progressBar.style.display = 'none'; 
-            const activityIcon = document.getElementById('activity-icon');
-            if (otherActivity.assets && otherActivity.assets.large_image) {
-              activityIcon.style.display = 'block';
-              activityIcon.src = `https://cdn.discordapp.com/app-assets/${otherActivity.application_id}/${otherActivity.assets.large_image}.png`;
-            } else {
-              activityIcon.style.display = 'none';
+          if (otherActivity) {
+            if (lastActivityId !== otherActivity.id || lastActivityType !== "other") {
+              lastActivityId = otherActivity.id;
+              lastActivityType = "other";
+              lastSpotifyStart = null;
+              clearInterval(spotifyTimer);
+              activityContainer.classList.remove('hidden');
+              progressBar.style.display = 'none';
+          
+              const activityIcon = document.getElementById('activity-icon');
+          
+              if (otherActivity.assets && otherActivity.assets.large_image) {
+                activityIcon.style.display = 'block';
+                const imageUrl = `https://cdn.discordapp.com/app-assets/${otherActivity.application_id}/${otherActivity.assets.large_image}.png`;
+                activityIcon.src = imageUrl;
+              } else {
+                activityIcon.style.display = 'block';
+                fetchAppIcon(otherActivity.application_id).then(iconUrl => {
+                  activityIcon.src = iconUrl;
+                });
+              }
+          
+              document.getElementById('activity-name').textContent = otherActivity.name || '';
+              document.getElementById('activity-details').textContent = otherActivity.details || '';
+              document.getElementById('activity-state').textContent = otherActivity.state || '';
             }
-            document.getElementById('activity-name').textContent = otherActivity.name || '';
-            document.getElementById('activity-details').textContent = otherActivity.details || '';
-            document.getElementById('activity-state').textContent = otherActivity.state || '';
           }
         } else {
           if (lastActivityType !== null) {
@@ -129,4 +138,18 @@ window.onload = function () {
       alert('Unable to fetch the Spotify track URL.');
     }
   });
+
+  async function fetchAppIcon(applicationId) {
+    try {
+      const response = await fetch(`https://discord.com/api/v10/applications/${applicationId}/rpc`);
+      if (!response.ok) throw new Error("App not found");
+      const appData = await response.json();
+      if (appData.icon) {
+        return `https://cdn.discordapp.com/app-icons/${applicationId}/${appData.icon}.png`;
+      }
+    } catch (e) {
+      console.warn("No icon for application:", applicationId);
+    }
+    return 'https://cdn.discordapp.com/embed/avatars/0.png';
+  }
 };
