@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+   <title>devmoon</title>
+   <meta charset="UTF-8">
+   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+   <meta name="description" content="devmoon - Developer and Designer">
+   <meta property="og:title" content="devmoon">
+   <meta property="og:description" content="">
+   <meta property="og:image" content="">
+   <meta property="og:url" content="">
+   <meta name="theme-color" content="">
+   <link rel="shortcut icon" href="" type="image/png">
+   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+   <link rel="stylesheet" href="./style.css">
+   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+   <script src="https://cdnjs.cloudflare.com/ajax/libs/vanta/0.5.21/vanta.net.min.js"></script>
+</head>
+<body>
+   <div id="background">
+   </div>
+   <div class="container">
+      <header>
+
+         <div class="avatar-wrapper">
+            <img class="avatar" id="avatar" src="your-image.jpg" alt="avatar"> 
+            <div id="zzz">
+              <div class="z z-1">Z</div>
+              <div class="z z-2">Z</div>
+              <div class="z z-3">Z</div>
+              <div class="z z-4">Z</div>
+            </div>
+          </div>
+         <h1 id="userdisplay" class="btn-shine"></h1>
+         <a id="username"></a>
+         <div id="status-indicator"></div>
+      </header>
+      <div id="activity-container" class="spotify-activity hidden">
+         <div class="activity-header">
+           <img id="activity-icon" class="spotify-cover" src="" alt="Activity Icon">
+           <div class="activity-info">
+             <span id="activity-name" class="song-name"></span>
+             <span id="activity-details" class="artist-name"></span>
+           </div>
+         </div>
+         <div class="activity-progress">
+            <span id="progress-start">0:00</span>
+            <div class="progress-bar">
+              <div id="progress-filled" class="filled"></div>
+            </div>
+            <span id="progress-end">0:00</span>
+          </div>
+       </div>
+      <nav>
+         <ul class="example-1">
+            <li class="icon-content">
+              <a
+                href="https://www.spotify.com/"
+                aria-label="Spotify"
+                data-social="spotify"
+                class="link"
+              >
+                <svg version="1.1" viewBox="0 0 100 100">
+                  <path
+                    d="M50,4C24.7,4,4,24.7,4,50s20.6,46,46,46s46-20.6,46-46S75.4,4,50,4z M71.6,71.5c0,0,0,0.1-0.1,0.1c-0.8,1.2-2,1.8-3.2,1.8  c-0.7,0-1.4-0.2-2-0.6c-10.2-6.3-23.3-7.7-38.8-4.1c-2.1,0.6-4-0.9-4.5-2.7c-0.6-2.3,0.9-4.1,2.7-4.6c17.7-4,32.6-2.3,44.4,5  c0.9,0.4,1.5,1,1.8,1.9C72.2,69.3,72.1,70.5,71.6,71.5z M76.9,59.3L76.9,59.3c-0.8,1.1-1.9,1.9-3.2,2.1c-0.2,0-0.5,0.1-0.7,0.1  c-0.8,0-1.6-0.3-2.3-0.7c-12-7.3-30.1-9.4-43.9-5c-2.5,0.6-5-0.7-5.6-3c-0.6-2.5,0.7-4.9,3-5.5c16.5-5,37.2-2.5,51.4,6.2  c0.8,0.4,1.5,1.3,1.8,2.5C77.9,57,77.6,58.3,76.9,59.3z M83.2,45.6c-1,1.4-2.7,2.1-4.4,2.1c-0.9,0-1.9-0.2-2.7-0.7c0,0,0,0,0,0  c-13.9-8.3-37.8-9.3-51.4-5.1c-2.7,0.8-5.5-0.7-6.4-3.3c-0.8-2.7,0.7-5.6,3.3-6.4c16.2-4.8,43-3.8,59.8,6.2  C83.8,39.6,84.7,42.9,83.2,45.6C83.3,45.5,83.3,45.5,83.2,45.6z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </a>
+              <div class="tooltip">Spotify</div>
+            </li>
+            <li class="icon-content">
+              <a
+                href="https://github.com/DevMo0oN"
+                aria-label="github"
+                data-social="Github"
+                class="link"
+              >
+                <svg version="1.1" viewBox="0 0 16 16" xml:space="preserve">
+                  <path
+                    d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27s1.36.09 2 .27c1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.01 8.01 0 0 0 16 8c0-4.42-3.58-8-8-8"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </a>
+              <div class="tooltip">Github</div>
+            </li>
+            <li class="icon-content">
+              <a
+                href="https://discord.com/users/235425034141827072"
+                aria-label="discord"
+                data-social="Discord"
+                class="link"
+              >
+                <svg version="1.1" viewBox="0 0 16 16">
+                  <path
+                  d="M13.545 2.907a13.2 13.2 0 0 0-3.257-1.011.05.05 0 0 0-.052.025c-.141.25-.297.577-.406.833a12.2 12.2 0 0 0-3.658 0 8 8 0 0 0-.412-.833.05.05 0 0 0-.052-.025c-1.125.194-2.22.534-3.257 1.011a.04.04 0 0 0-.021.018C.356 6.024-.213 9.047.066 12.032q.003.022.021.037a13.3 13.3 0 0 0 3.995 2.02.05.05 0 0 0 .056-.019q.463-.63.818-1.329a.05.05 0 0 0-.01-.059l-.018-.011a9 9 0 0 1-1.248-.595.05.05 0 0 1-.02-.066l.015-.019q.127-.095.248-.195a.05.05 0 0 1 .051-.007c2.619 1.196 5.454 1.196 8.041 0a.05.05 0 0 1 .053.007q.121.1.248.195a.05.05 0 0 1-.004.085 8 8 0 0 1-1.249.594.05.05 0 0 0-.03.03.05.05 0 0 0 .003.041c.24.465.515.909.817 1.329a.05.05 0 0 0 .056.019 13.2 13.2 0 0 0 4.001-2.02.05.05 0 0 0 .021-.037c.334-3.451-.559-6.449-2.366-9.106a.03.03 0 0 0-.02-.019m-8.198 7.307c-.789 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.45.73 1.438 1.613 0 .888-.637 1.612-1.438 1.612m5.316 0c-.788 0-1.438-.724-1.438-1.612s.637-1.613 1.438-1.613c.807 0 1.451.73 1.438 1.613 0 .888-.631 1.612-1.438 1.612"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </a>
+              <div class="tooltip">Discord</div>
+            </li>
+            <li class="icon-content">
+              <a
+                href="https://telegram.org/DevMoooN"
+                aria-label="Telegram"
+                data-social="telegram"
+                class="link"
+              >
+                <svg version="1.1" viewBox="0 0 100 100">
+                  <path
+                    d="M95,9.9c-1.3-1.1-3.4-1.2-7-0.1c0,0,0,0,0,0c-2.5,0.8-24.7,9.2-44.3,17.3c-17.6,7.3-31.9,13.7-33.6,14.5  c-1.9,0.6-6,2.4-6.2,5.2c-0.1,1.8,1.4,3.4,4.3,4.7c3.1,1.6,16.8,6.2,19.7,7.1c1,3.4,6.9,23.3,7.2,24.5c0.4,1.8,1.6,2.8,2.2,3.2  c0.1,0.1,0.3,0.3,0.5,0.4c0.3,0.2,0.7,0.3,1.2,0.3c0.7,0,1.5-0.3,2.2-0.8c3.7-3,10.1-9.7,11.9-11.6c7.9,6.2,16.5,13.1,17.3,13.9  c0,0,0.1,0.1,0.1,0.1c1.9,1.6,3.9,2.5,5.7,2.5c0.6,0,1.2-0.1,1.8-0.3c2.1-0.7,3.6-2.7,4.1-5.4c0-0.1,0.1-0.5,0.3-1.2  c3.4-14.8,6.1-27.8,8.3-38.7c2.1-10.7,3.8-21.2,4.8-26.8c0.2-1.4,0.4-2.5,0.5-3.2C96.3,13.5,96.5,11.2,95,9.9z M30,58.3l47.7-31.6  c0.1-0.1,0.3-0.2,0.4-0.3c0,0,0,0,0,0c0.1,0,0.1-0.1,0.2-0.1c0.1,0,0.1,0,0.2-0.1c-0.1,0.1-0.2,0.4-0.4,0.6L66,38.1  c-8.4,7.7-19.4,17.8-26.7,24.4c0,0,0,0,0,0.1c0,0-0.1,0.1-0.1,0.1c0,0,0,0.1-0.1,0.1c0,0.1,0,0.1-0.1,0.2c0,0,0,0.1,0,0.1  c0,0,0,0,0,0.1c-0.5,5.6-1.4,15.2-1.8,19.5c0,0,0,0,0-0.1C36.8,81.4,31.2,62.3,30,58.3z"
+                    fill="currentColor"
+                  ></path>
+                </svg>
+              </a>
+              <div class="tooltip">Telegram</div>
+            </li>
+          </ul>
+      </nav>
+   </div>
+   <div class="volume-control">
+      <div class="paudio-player">
+         <div class="palbum-cover">
+            <img src="./cover.jpg" alt="Album Cover" />
+          </div>
+        <div class="pplayer-controls">
+          <div class="psong-info">
+            <div class="psong-title">DMT (Instrumental)</div>
+            <p class="partist">Ashkan Kagan</p>
+          </div>
+          <div class="pprogress-bar">
+            <div class="progress" id="progress"></div>
+          </div>
+          <div class="pbuttons">
+            <pbutton class="play-btn" id="playBtn">
+              <svg viewBox="0 0 16 16" class="bi bi-play-fill" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+                <path fill="white" d="m11.596 8.697-6.363 3.692c-.54.313-1.233-.066-1.233-.697V4.308c0-.63.692-1.01 1.233-.696l6.363 3.692a.802.802 0 0 1 0 1.393z" />
+              </svg>
+            </button>
+            <pbutton class="pause-btn" id="pauseBtn" style="display:none;">
+              <svg viewBox="0 0 16 16" class="bi bi-pause-fill" fill="currentColor" height="16" width="16" xmlns="http://www.w3.org/2000/svg">
+                <path fill="white" d="M5.5 3.5A1.5 1.5 0 0 1 7 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5zm5 0A1.5 1.5 0 0 1 12 5v6a1.5 1.5 0 0 1-3 0V5a1.5 1.5 0 0 1 1.5-1.5z" />
+              </svg>
+            </pbutton>
+          </div>
+        </div>
+        <div class="slider">
+          <input type="range" class="level" min="0" max="100" value="50" />
+          <svg class="volume" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+            <g>
+              <path d="M18.36 19.36a1 1 0 0 1-.705-1.71C19.167 16.148 20 14.142 20 12s-.833-4.148-2.345-5.65a1 1 0 1 1 1.41-1.419C20.958 6.812 22 9.322 22 12s-1.042 5.188-2.935 7.069a.997.997 0 0 1-.705.291z" fill="currentColor" />
+              <path d="M15.53 16.53a.999.999 0 0 1-.703-1.711C15.572 14.082 16 13.054 16 12s-.428-2.082-1.173-2.819a1 1 0 1 1 1.406-1.422A6 6 0 0 1 18 12a6 6 0 0 1-1.767 4.241.996.996 0 0 1-.703.289zM12 22a1 1 0 0 1-.707-.293L6.586 17H4c-1.103 0-2-.897-2-2V9c0-1.103.897-2 2-2h2.586l4.707-4.707A.998.998 0 0 1 13 3v18a1 1 0 0 1-1 1z" fill="currentColor" />
+            </g>
+          </svg>
+        </div>
+      </div>
+    </div>
+
+
+    
+
+
+   <script src="./avatar.js"></script>
+   <script src="./background.js"></script>
+   <script src="./blocker.js"></script>
+   <script src="./music.js"></script>
+</body>
+</html>
