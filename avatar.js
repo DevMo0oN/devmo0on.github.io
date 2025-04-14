@@ -18,6 +18,7 @@ window.onload = function () {
         const statusIndicator = document.getElementById('status-indicator');
         const activityContainer = document.getElementById('activity-container');
         const progressBar = document.querySelector('.activity-progress');
+        const activityTypeText = document.getElementById('activity-type');
         const zzz = document.getElementById('zzz');
 
         usernameElement.textContent = info.username;
@@ -32,6 +33,8 @@ window.onload = function () {
         }else{
           zzz.classList.add('hidden');
         }
+
+        
 
         const spotifyActivity = data.activities?.find(a => a.name === "Spotify");
         const otherActivity = data.activities?.find(a => a.name !== "Spotify");
@@ -48,6 +51,7 @@ window.onload = function () {
             const startTimestamp = spotifyActivity.timestamps.start;
             const endTimestamp = spotifyActivity.timestamps.end;
             const totalDuration = endTimestamp - startTimestamp;
+            activityTypeText.textContent = getActivityText(spotifyActivity.type, spotifyActivity.name || '');
             if (spotifyTimer) {
               clearInterval(spotifyTimer);
             }
@@ -89,7 +93,7 @@ window.onload = function () {
               progressBar.style.display = 'none';
           
               const activityIcon = document.getElementById('activity-icon');
-          
+              activityTypeText.textContent = getActivityText(otherActivity.type, otherActivity.name || '');
               if (otherActivity.assets && otherActivity.assets.large_image) {
                 activityIcon.style.display = 'block';
                 const imageUrl = `https://cdn.discordapp.com/app-assets/${otherActivity.application_id}/${otherActivity.assets.large_image}.png`;
@@ -100,7 +104,7 @@ window.onload = function () {
                   activityIcon.src = iconUrl;
                 });
               }
-          
+             
               document.getElementById('activity-name').textContent = otherActivity.name || '';
               document.getElementById('activity-details').textContent = otherActivity.details || '';
               document.getElementById('activity-state').textContent = otherActivity.state || '';
@@ -151,5 +155,16 @@ window.onload = function () {
       console.warn("No icon for application:", applicationId);
     }
     return 'https://cdn.discordapp.com/embed/avatars/0.png';
+  }
+  function getActivityText(type, name) {
+    switch (type) {
+      case 0: return `Playing ${name}`;
+      case 1: return `Streaming ${name}`;
+      case 2: return `Listening to ${name}`;
+      case 3: return `Watching ${name}`;
+      case 4: return `${name}`; 
+      case 5: return `Competing in ${name}`;
+      default: return name;
+    }
   }
 };
