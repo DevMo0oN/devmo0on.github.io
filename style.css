@@ -217,7 +217,7 @@ nav ul li a i {
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    gap: 12px;
+    gap: 10px;
   }
   .activity-info {
     display: flex;
@@ -232,6 +232,15 @@ nav ul li a i {
     font-size: 0.9em;
     color: #aaa;
   }
+
+  #activity-type {
+    position: relative;
+    top: -10px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: #cccccc;
+  }
+
   .activity-progress {
     display: none;
     align-items: center;
