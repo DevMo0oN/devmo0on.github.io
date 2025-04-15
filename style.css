@@ -417,7 +417,7 @@ nav ul li a i {
     height: 64px;
     background-color: rgba(255, 255, 255, 0.1);
     border-radius: 8px;
-    padding: 8px;
+    padding: 5px;
     box-sizing: border-box;
   }
   .palbum-cover {
@@ -425,7 +425,7 @@ nav ul li a i {
     height: 54px;
     border-radius: 8px;
     overflow: hidden;
-    margin-right: 12px;
+    margin-right: 10px;
     flex-shrink: 0;
   }
   .palbum-cover img {
@@ -440,7 +440,7 @@ nav ul li a i {
     flex-direction: column;
   }
   .psong-info {
-    margin-bottom: 4px;
+    margin-bottom: 2px;
   }
   .psong-title {
     font-size: 10px;
@@ -454,7 +454,7 @@ nav ul li a i {
   }
   .pprogress-bar {
     width: 90%;
-    height: 5px;
+    height: 3px;
     background-color: #4f4f4f;
     border-radius: 2px;
     overflow: hidden;
@@ -477,7 +477,7 @@ nav ul li a i {
   }
   .play-btn,
   .pause-btn {
-    font-size: 16px;
+    font-size: 10px;
     color: #fff;
     margin-right: 8px;
     transition: transform 0.2s ease-in-out;
@@ -540,6 +540,7 @@ nav ul li a i {
     -ms-flex-align: center;
     align-items: center;
   }
+
   .slider .volume {
     display: inline-block;
     vertical-align: top;
