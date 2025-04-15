@@ -342,10 +342,10 @@ nav ul li a i {
   .example-1 .icon-content .link[data-social="spotify"]:hover {
     color: #1db954;
   }
-  .example-1 .icon-content .link[data-social="github"]:hover {
+  .example-1 .icon-content .link[data-social="Github"]:hover {
     color: #bd081c;
   }
-  .example-1 .icon-content .link[data-social="discord"]:hover {
+  .example-1 .icon-content .link[data-social="Discord"]:hover {
     color: #00ffea;
   }
   .example-1 .icon-content .link[data-social="telegram"]:hover {
