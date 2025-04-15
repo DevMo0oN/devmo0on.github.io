@@ -139,7 +139,7 @@ window.onload = function () {
     if (spotifyTrackUrl) {
       window.open(spotifyTrackUrl, '_blank');
     } else {
-      alert('Unable to fetch the Spotify track URL.');
+      alert('Unable to find URL');
     }
   });
 
