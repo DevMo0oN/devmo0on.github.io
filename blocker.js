@@ -1,12 +1,4 @@
 document.addEventListener('DOMContentLoaded', function () {
-    function disableSelection(e) {
-        e.onselectstart = () => false;
-        e.style.userSelect = "none";
-        e.onmousedown = () => false;
-        e.style.cursor = "default";
-    }
-
-    disableSelection(document.body);
 
     window.addEventListener("keydown", function (e) {
         if (e.ctrlKey && [65, 66, 67, 70, 73, 80, 83, 85, 86].includes(e.which)) {
