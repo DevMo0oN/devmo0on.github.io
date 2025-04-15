@@ -497,14 +497,13 @@ nav ul li a i {
   }
   .volume-control {
     display: flex;
-    flex-direction: column;
-    align-items: center;
     position: fixed;
     bottom: 15px;
     left: 15px;
-    z-index: 9999;
-    gap: 10px;
+
+
   }
+
 
   @media screen and (max-width: 768px) {
     .volume-control {
@@ -525,6 +524,7 @@ nav ul li a i {
   }
   .slider {
     position: absolute;
+    
     top: 50%;
     right: -50px;
     transform: translateY(-50%);
@@ -532,6 +532,13 @@ nav ul li a i {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+    -ms-flex-direction: row-reverse;
+    flex-direction: row-reverse;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
   }
   .slider .volume {
     display: inline-block;
@@ -548,6 +555,8 @@ nav ul li a i {
     
   }
   .slider .level {
+    -webkit-appearance: none;
+    -moz-appearance: none;
     appearance: none;
     width: var(--slider-width);
     height: var(--slider-height);
@@ -556,6 +565,8 @@ nav ul li a i {
     border-radius: var(--slider-border-radius);
     -webkit-transition: height var(--level-transition-duration);
     -o-transition: height var(--level-transition-duration);
+    transition: height var(--level-transition-duration);
+    cursor: inherit;
     transform: rotate(270deg);
   }
   .slider .level::-webkit-slider-thumb {
